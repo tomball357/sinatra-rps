@@ -19,17 +19,17 @@ get("/rock") do
   cch = choice.sample
 	
   if plych == cch
-    final = "It's a tie!"
+    final = "It's a tie"
   elsif (plych == "rock" && cch == "scissors") ||
         (plych == "paper" && cch == "rock") ||
         (plych == "scissors" && cch == "paper")
-    final = "We won!"
+    final = "We won"
   else
-    final = "We lost!"
+    final = "We lost"
   end
   
 
-  @outcome = "Player chose: #{plych}! Computer chose: #{cch}! #{final}"
+  @outcome = "We chose #{plych}! They chose #{cch}! #{final}!"
   erb(:rock)
 end
 
@@ -48,7 +48,7 @@ get("/paper") do
     final = "We lost!"
   end
 
-  @outcome = "Player chose: #{plych}! Computer chose: #{cch}! #{final}"
+  @outcome = "We chose #{plych}! They chose #{cch}! #{final}!"
   erb(:paper)
 end
 
@@ -67,6 +67,6 @@ get("/scissors") do
     final = "We lost!"
   end
 
-  @outcome = "Player chose: #{plych}! Computer chose: #{cch}! #{final}"
+  @outcome = "We chose #{plych}! They chose #{cch}! #{final}!"
   erb(:scissors)
 end
