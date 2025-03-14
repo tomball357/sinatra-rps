@@ -23,7 +23,8 @@ def rps_game(player_choice)
     result = "We lost!"
   end
 
-  @outcome = "We played #{player_choice}, they played #{computer_choice}! #{result}"
+  @outcome = "We played #{player_choice}! They played #{computer_choice}! #{result}"
+
 end
 
 # Homepage with game rules
