@@ -15,7 +15,7 @@ end
 
 get("/rock") do
   choice = ["rock", "paper", "scissors"]
-  plych = choice.sample
+  plych = "rock"
   cch = choice.sample
 	
   if plych == cch
@@ -27,47 +27,46 @@ get("/rock") do
   else
     final = "We lost!"
   end
-  erb(:rock)
+  
 
-  @outcome = "Player chose: #{plych}! Computer chose: #{cch}!"
-  @final = final
+  @outcome = "Player chose: #{plych}! Computer chose: #{cch}! #{final}"
+  erb(:rock)
 end
 
 get("/paper") do
   choice = ["rock", "paper", "scissors"]
-  plych = choice.sample
+  plych = "paper"
   cch = choice.sample
 	
-  @outcome = "Player chose: #{plych}! Computer chose: #{cch}!"
-	
   if plych == cch
-    puts "It's a tie!"
+    final = "It's a tie!"
   elsif (plych == "rock" && cch == "scissors") ||
         (plych == "paper" && cch == "rock") ||
         (plych == "scissors" && cch == "paper")
-    puts "Player wins!"
+    final = "We won!"
   else
-    puts "Computer wins!"
+    final = "We lost!"
   end
+
+  @outcome = "Player chose: #{plych}! Computer chose: #{cch}! #{final}"
   erb(:paper)
 end
 
 get("/scissors") do
   choice = ["rock", "paper", "scissors"]
-  plych = choice.sample
+  plych = "scissors"
   cch = choice.sample
 	
-  @outcome = "Player chose: #{plych}! Computer chose: #{cch}!"
-	
   if plych == cch
-    puts "It's a tie!"
+    final = "It's a tie!"
   elsif (plych == "rock" && cch == "scissors") ||
         (plych == "paper" && cch == "rock") ||
         (plych == "scissors" && cch == "paper")
-    puts "Player wins!"
+    final = "We won!"
   else
-    puts "Computer wins!"
+    final = "We lost!"
   end
 
+  @outcome = "Player chose: #{plych}! Computer chose: #{cch}! #{final}"
   erb(:scissors)
 end
